@@ -1,4 +1,4 @@
-### Ruby on rails - Todo_app
+# Ruby on rails - Todo_app
 
 Basically I am java developer for nearly 2 years, for the last 3 months I worked with Node.js.
 These days I thought of learning Ruby on Rails, and here goes my first application. 
@@ -78,7 +78,7 @@ In this app, I am going add functionalities like
 **1.** Now we need create the basic skeleton for the rails```rails new todo_app```. The other steps will follow like ```bunle install```
 start the server ```rails server```
 
-**2.** Its time to concentrate on app directory, Lets create the controllers. ```rails generate controller Todos controller```. The above command will create controllers, views, helpers, javascript, stylesheet. please find the output below
+**2.** Its time to concentrate on app directory, Lets **Generate the controller** . ```rails generate controller Todos controller```. The above command will create controllers, views, helpers, javascript, stylesheet. please find the output below
 
 ```
 
@@ -100,3 +100,87 @@ create  app/controllers/todos_controller.rb
       create      app/assets/stylesheets/todos.css.scss
 
 ```
+
+##### image of controller with empty functions
+
+**3.** Our next step is show some todo's from the controller. Before integrating the db, lets write the todo's directly in the controller
+`app/controllers/todos_controller.rb`
+
+```ruby
+class TodosController < ApplicationController
+ def index
+  @todo_item1 = "Read Fountain head"
+ end
+end
+```
+
+
+The instance variable @todo_item1 can be used in the view to show the content passed by the controller.
+
+`app/views/todos/index.html.erb`
+
+```html
+
+<title>Shared Todo App </title>
+<h1>Shared Todo App</h1>
+<p>All your todos here</p>
+<ul><li> <%= @todo_item1 %> </li></ul>
+```
+
+
+#### image of app here 
+
+**4.** Instead of simply assigning one todo_item lets assign a collection of todo_items using an array and show them in the view
+
+`@todo_array = [ "Read FountainHead", "watch God father Movie", "Read God Father Novel", "Meet your love" ]`
+
+As there are multiple elements in the array, we need to iterate them in the view as below
+
+```html
+
+<ul>
+  <% @todo_array.each do |t| %>
+   <li> #todo item here </li>
+   <% end %>
+</ul>
+```
+#### add an image as display of all the todo's
+
+
+**4.** instead of we statically storing the values, lets create a model and fetch those values from the db
+
+```
+
+rails generate model Todo todo_item:string
+      invoke  active_record
+      create    db/migrate/20120802113330_create_todos.rb
+      create    app/models/todo.rb
+      invoke    test_unit
+      create      test/unit/todo_test.rb
+      create      test/fixtures/todos.yml
+      ```
+      
+      
+from above we can se that it has created a model in `app/models/todo.rb` and create a migration file under `app/migrate` and then test cases.
+
+we can edit this migration file to change the schema of the table or insert few rows....
+
+**rake db:migrate** pushes the database changes from the migration file to the actual database. In Rails the default database is sqlite.
+
+```
+rake db:migrate 
+  ==  CreateTodos: migrating ====================================================
+    -- create_table(:todos)
+    -> 0.0022s
+    ==  CreateTodos: migrated (0.0024s) ===========================================
+    ```
+ 
+ Rails model help us get rid of running sql queries for each and every database task which is not fine=
+
+  You would hardly need to refer to the actual table by the name todos. You would only be accessing the data through the model Todo.
+
+use `rake db:rollback` to destroy the model, Not recomended unless required
+
+**5.** As of now we had created a model and then the table, Its time to add the code in the controller to write and read the data in the database 
+
+
