@@ -6,11 +6,13 @@ These days I thought of learning Ruby on Rails, and here goes my first applicati
 For mac, Ruby will be by default available but you need to install rails. To install rails the command is 
 ```sudo gem install rails```
 
-Once rails is installed you can create the complete skeleton of the rails app using the command ```rails new zak_site```. please replace the name of your choice.
+Once rails is installed you can create the complete skeleton of the rails app using the command ```rails new zakir_site```. please replace the name of your choice.
 
 
 ##### image bundle_install
-Gemfile contains all the gems that are necessary for the application to rum. if we need any extra features apart from the default gems, we need to add them up in the Gem file.
+
+
+Gemfile contains all the gems that are necessary for the basic application to run. if we need any extra features apart from the default gems, we need to add them up in the Gem file.
 
 To install the gems here goes the command ```bundle install ```
 
@@ -21,6 +23,8 @@ Till Now things needed for rails to set up is done, Now you can run the rails se
 
 
 If you hit localhost:3000 in the browser, Then you can see the output of default rails application in action.
+
+####default rails browser image
 
 Before Jumping into the application lets know something more about the default structure of Rails. 
 
@@ -77,3 +81,39 @@ You might have already figured out that there is a view file for every action of
 
 Here goes the image of the total structure of Rails
 ##### image rails structure 
+
+
+
+
+#### Todo app
+
+In this app, I am going add functionalities like 
+
+- Add a todo
+- Mark a todo as complete
+- Unmark a todo
+- delte a todo
+
+**1.** Now we need create the basic skeleton for the rails```rails new todo_app```. The other steps will follow like ```bunle install```
+start the server ```rails server```
+
+**2.** Its time to concentrate on app directory, Lets create the controllers. ```rails generate controller Todos controller```. The above command will create controllers, views, helpers, javascript, stylesheet. please find the output below
+
+```create  app/controllers/todos_controller.rb
+  route  get "todos/index"
+   invoke  erb
+   create    app/views/todos
+   create    app/views/todos/index.html.erb
+invoke  test_unit
+   create    test/functional/todos_controller_test.rb
+   invoke  helper
+create    app/helpers/todos_helper.rb
+invoke    test_unit
+create      test/unit/helpers/todos_helper_test.rb
+invoke  assets
+invoke    coffee
+create      app/assets/javascripts/todos.js.coffee
+   invoke    scss
+   create      app/assets/stylesheets/todos.css.scss``` 
+   
+
