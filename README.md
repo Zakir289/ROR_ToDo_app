@@ -31,7 +31,7 @@ Before Jumping into the application lets know something more about the default s
 **1.public:** public/index.html is the file that gets rendered when you see the output of the default Rails application in App Output tab. All the publicly accessible files resides in this folder. Rails won't process these folders these are accessible directly from the browser
 
 **2.Gemfile:** It contains the gems necessery for the application.These gems are installed by using the command bundle install. If in between developing the application if we need any other gems, Then add those gems in the Gemfile and you need to run the command again.
-
+let
 **3.app** Here comes the actual stuff. app directory contains all application related files - the models, controllers and views. This is the heart of your application where all the magic happens.	
 
 **4.config:** All the configuration related to the application is done here. Changes done to this file forces you to restart the server again.
@@ -39,32 +39,13 @@ Before Jumping into the application lets know something more about the default s
 
 Apart from Text editor like sublime, I recomend any one to try **Ruby Mine**. I felt more comfortable with this IDE and it helps you debug the code so easily and understand how rails works.  
 
-#### Let the magin show begin:
+#### Let the magic show begin:
 
 **1.** Now we are about to create few controllers which will handle the requests and present the related views to it.
 ```rails generate controller Pages home about```
 
 **2.** The above command says create a controller **Pages** with **home** and **about** as path. The result of the above commmand creates the things below
 
-   ``` create  app/controllers/pages_controller.rb
-       route  get "pages/about"
-       route  get "pages/home"
-      invoke  erb
-      create    app/views/pages
-      create    app/views/pages/home.html.erb
-      create    app/views/pages/about.html.erb
-      invoke  test_unit
-      create    test/functional/pages_controller_test.rb
-      invoke  helper
-      create    app/helpers/pages_helper.rb
-      invoke    test_unit
-      create      test/unit/helpers/pages_helper_test.rb
-      invoke  assets
-      invoke    coffee
-      create      app/assets/javascripts/pages.js.coffee
-      invoke    scss
-      create      app/assets/stylesheets/pages.css.scss
-```
 
 **3.** The above result clearly shows that it had created controller with name **pages_controller** and add the routes accordingly in routes.rb, It had created the relative views under app/views/pages. Helpers, Javascripts and stylsheet are also created. 
 
