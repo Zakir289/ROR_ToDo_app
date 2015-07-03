@@ -1,4 +1,4 @@
-# Ruby on rails - Todo_app
+# Ruby On Rails - todo_app
 
 Basically I am java developer for nearly 2 years, for the last 3 months I worked with Node.js.
 These days I thought of learning Ruby on Rails, and here goes my first application. 
