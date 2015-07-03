@@ -81,14 +81,26 @@ start the server ```rails server```
 **2.** Its time to concentrate on app directory, Lets create the controllers. ```rails generate controller Todos controller```. The above command will create controllers, views, helpers, javascript, stylesheet. please find the output below
 
 ```create  app/controllers/todos_controller.rb
+
+
   route  get "todos/index"
+  
+  
    invoke  erb
+   
+   
    create    app/views/todos
+   
    create    app/views/todos/index.html.erb
+   
 invoke  test_unit
+
    create    test/functional/todos_controller_test.rb
+   
    invoke  helper
+   
 create    app/helpers/todos_helper.rb
+
 invoke    test_unit
 create      test/unit/helpers/todos_helper_test.rb
 invoke  assets
