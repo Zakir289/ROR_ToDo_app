@@ -1,7 +1,6 @@
 # Ruby On Rails - todo_app
 
-Basically I am java developer for nearly 2 years, for the last 3 months I worked with Node.js.
-These days I thought of learning Ruby on Rails, and here goes my first application. 
+Basically I code in Java or Node.JS,These days I thought of learning Ruby on Rails, and here goes my first application. 
 
 For mac, Ruby will be by default available but you need to install rails. To install rails the command is 
 ```sudo gem install rails```
