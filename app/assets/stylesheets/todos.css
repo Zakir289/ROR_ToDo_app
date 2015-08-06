@@ -1,0 +1,16 @@
+.container {
+  width: 940px;
+  margin-right: auto;
+  margin-left: auto;
+  *zoom: 1;
+}
+
+.nav-background{
+	background:#16a085;
+	color:white;	
+}
+
+.app-name{
+	color:white!important;
+}
+

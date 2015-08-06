@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TodoApp</title>
+   <%= stylesheet_link_tag 'bootstrap' %>
+    <%= stylesheet_link_tag 'todos' %>
+    <%= javascript_include_tag 'application' %> 
+    <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="navbar">
+    <div class="navbar-inner nav-background">
+      <a class="brand app-name" href="#">Rikaz </a>
+    </div>
+  </div>		
+<%= yield %>
+
+</body>
+</html>
